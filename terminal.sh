@@ -35,6 +35,12 @@ mv oldfile.txt newfile.txt
 
 ###############################
 
+# View A File (less, more)
+less ex12.txt
+#q to quit
+
+###############################
+
 pushd
 # It's like saying, "Save where I am, then go here."
 # takes your current directory and "pushes" it into a list for later,
