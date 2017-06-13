@@ -5,3 +5,9 @@ spark-submit --deploy-mode [cluster] --class <class-name> <jar>
 # If there is an error while executing .JAR
 # use <applicationId> to get more precise details on the error
 yarn logs -applicationId application_1497378457473_0012
+
+
+# To monitor current job running
+http://<IP>:20888/proxy/<application_1497378457473_0013>/jobs/
+# Get <IP> from dashboard
+# Get applicationID from EMR
