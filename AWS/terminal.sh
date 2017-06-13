@@ -30,6 +30,11 @@ cp -r something newplace
 
 ###############################
 
+mv oldfile.txt newfile.txt
+# Moving files or, rather, renaming them.
+
+###############################
+
 pushd
 # It's like saying, "Save where I am, then go here."
 # takes your current directory and "pushes" it into a list for later,
