@@ -23,6 +23,12 @@ New-Item command
 
 ###############################
 
+cp -r something newplace
+# Use the cp -r command to copy more directories with files in them.
+# Put a / at the end of the directory to make sure the file is really
+# a directory
+
+###############################
 
 pushd
 # It's like saying, "Save where I am, then go here."
