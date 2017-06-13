@@ -6,6 +6,8 @@ cat filename | head -n 5
 cat filename | tail -n 5
 # see last five lines
 
+cat part* > all_parts
+# join all files that start with part into one filename all_parts
 
 
 pushd
