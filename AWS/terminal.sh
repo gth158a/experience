@@ -10,6 +10,20 @@ cat part* > all_parts
 # join all files that start with part into one filename all_parts
 
 
+###############################
+# NEW
+
+touch filename
+# create empty files name
+
+New-Item command
+#creates an empty directory
+
+
+
+###############################
+
+
 pushd
 # It's like saying, "Save where I am, then go here."
 # takes your current directory and "pushes" it into a list for later,
