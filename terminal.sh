@@ -3,6 +3,9 @@
 cat filename | head -n 5
 # see first five lines
 
+cat filename | head -c 140
+# see first 140 characters 
+
 cat filename | tail -n 5
 # see last five lines
 
