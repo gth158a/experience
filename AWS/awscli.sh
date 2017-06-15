@@ -1,3 +1,14 @@
+
+# todo: installation
+
+aws configure
+# setup credentials for awscli
+
+# todo: configure multiple accounts
+
+
+###############################
+
 aws s3 ls
 # is like doing ls on root folder
 
