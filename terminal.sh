@@ -4,7 +4,7 @@ cat filename | head -n 5
 # see first five lines
 
 cat filename | head -c 140
-# see first 140 characters 
+# see first 140 characters
 
 cat filename | tail -n 5
 # see last five lines
@@ -69,3 +69,12 @@ CTRL-a # go to start of line
 CTRL-e # go to end of line
 CTRL-b # go backwards without deleting
 CTRL-f # go forward without deleting
+
+###############################
+
+# to list the contents of folder sorted by date
+repos ls -llt | head -n 3
+# total 388200
+# drwxr-xr-x   13 jaimealmeida  staff        442 Jun 17 13:33 worklog
+# drwxr-xr-x    5 jaimealmeida  staff        170 Jun 17 11:19 sql
+ 
