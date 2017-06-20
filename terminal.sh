@@ -12,6 +12,8 @@ cat filename | tail -n 5
 cat part* > all_parts
 # join all files that start with part into one filename all_parts
 
+cat filename1 filename2 > bothfiles
+# concatenates files in order 
 
 ###############################
 # NEW
