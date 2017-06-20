@@ -73,8 +73,18 @@ CTRL-f # go forward without deleting
 ###############################
 
 # to list the contents of folder sorted by date
-repos ls -llt | head -n 3
+ls -llt | head -n 3
 # total 388200
 # drwxr-xr-x   13 jaimealmeida  staff        442 Jun 17 13:33 worklog
 # drwxr-xr-x    5 jaimealmeida  staff        170 Jun 17 11:19 sql
- 
+
+# to list filename in folder and their content
+tail -n +1 -- ./6-20/rmse/rmse-p1q5*
+# ==> ./6-20/rmse/rmse-p1q5-400-part-00000 <==
+# 3.5987850498122835
+#
+# ==> ./6-20/rmse/rmse-p1q5-500-part-00000 <==
+# 3.5895468674223503
+#
+# ==> ./6-20/rmse/rmse-p1q5-600-part-00000 <==
+# 3.5986058154045715
