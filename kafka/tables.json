@@ -1,0 +1,77 @@
+{"coord":{"lon":137.17,"lat":35.08},
+"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],
+"base":"stations",
+"main":{"temp":26,"pressure":1012,"humidity":88,"temp_min":26,"temp_max":26},
+"visibility":10000,"wind":{"speed":1},"clouds":{"all":75},"dt":1499722920,
+"sys":{"type":1,"id":7565,"message":0.0036,"country":"JP","sunrise":1499629547,"sunset":1499681253},
+"id":1849814,"name":"Toyota","cod":200}
+
+cassandra table [weather]
+
+"lon":137.17,
+"lat":35.08,
+"dt":1499722920,
+"temp":26,
+"pressure":1012,
+"humidity":88,
+"temp_min":26,
+"temp_max":26,
+"visibility":10000,
+"wind":{"speed":1},
+"clouds":{"all":75},
+"message":0.0036,
+"country":"JP",
+"sunrise":1499629547,
+"sunset":1499681253,
+
+
+--------------------
+
+
+INSERT INTO plume.pollution_data_by_lat_lon (
+latitude, longitude, timestamp, nitrous_data, overall_data, ozone_data, pm_data, pm_data_ten,
+pm_data_twenty_five) values ($latitude, $longitude, $timestamp, $no_data, $overall_data, $ozone_data, $pm_data, $pm_data_ten, $pm_data_twenty_five)"
+
+
+cassandra table [pollution]
+latitude | longitude | timestamp | nitrous_data | overall_data | ozone_data | pm_data | pm_data_ten | pm_data_twen
+ty_five
+
+-----------------
+
+SELECT * FROM pollution
+
+-----------------
+
+CREATE TYPE IF NOT EXISTS plume.pollution_data (value_upm float, pi float, aqi float, aqi_cn float)
+
+CREATE TABLE IF NOT EXISTS plume.pollution_data_by_lat_lon (latitude double, longitude double, timestamp double, pm_data frozen <pollution_data>, nitrous_data frozen <pollution_data>, pm_data_ten frozen <pollution_data>, pm_data_twenty_five frozen <pollution_data>, ozone_data frozen <pollution_data>, overall_data frozen <pollution_data>, primary key ((latitude, longitude), timestamp)
+
+
+CREATE TABLE IF NOT EXISTS plume.lat_lon (name string, latitude double, longitude double,  primary key (latitude, longitude)
+
+
+----------
+
+dse spark
+
+// issue is that pollution data is run every hour
+// weather data is every 3 hours
+// so I can use weather dt
+
+csc.setKeyspace("")
+
+val results = csc.sql("SELECT p.*, w.*
+FROM pollution p JOIN weather w ON
+p.latitutde = w.latitude AND
+p.longitude = w.longitude AND
+w.dt == p.timestamp
+")
+
+result.take(5).foreach(println)
+
+
+s"INSERT INTO plume.pollution_data_by_lat_lon (latitude, longitude, timestamp, " +
+          s"nitrous_data, overall_data, ozone_data, pm_data, pm_data_ten, pm_data_twenty_five) values " +
+          s"($latitude, $longitude, $timestamp, $no_data, $overall_data, $ozone_data, $pm_data, " +
+          s"$pm_data_ten, $pm_data_twenty_five)"
