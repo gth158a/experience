@@ -1,0 +1,4 @@
+describe KEYSPACES;
+use plume;
+describe tables;
+#pollution_data_by_lat_lon
