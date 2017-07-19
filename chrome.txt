@@ -1,0 +1,2 @@
+# open history
+cmd + y
