@@ -1,0 +1,5 @@
+Anaconda3-4.4.0-Linux-x86_64
+# git
+sudo apt-get install git
+# atom
+atom-1.18.0
