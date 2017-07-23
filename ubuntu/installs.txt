@@ -1,5 +1,13 @@
 Anaconda3-4.4.0-Linux-x86_64
 # git
 sudo apt-get install git
+
+git config --global user.email ""
+git config --global user.name ""
+
+sudo apt-get install xclip
+
+chmod 400 ~/.ssh/id_rsa
+
 # atom
 atom-1.18.0
