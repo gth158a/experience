@@ -17,3 +17,6 @@ aws s3 ls s3://sandbox-l2v
 
 aws s3 ls s3://sandbox-l2v --recursive
 # ls on folder and subfolders
+
+aws s3 cp s3://sandbox-l2v/datasets/ml-1m/rmse/ /Users/jaimealmeida/repos/worklog/7-25 --recursive
+# to copy all files in folder from s3 to local folder
