@@ -11,3 +11,6 @@ yarn logs -applicationId application_1497378457473_0012
 http://<IP>:20888/proxy/<application_1497378457473_0013>/jobs/
 # Get <IP> from dashboard
 # Get applicationID from EMR
+
+# dynamic port forwarding with foxy-proxy in chrome
+ssh -i <credentials-location> -ND 8157 hadoop@<master-public-dns>
