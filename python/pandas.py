@@ -19,6 +19,11 @@ df = df[~df.column.isin(value_list)]
 # Delete column from DataFrame
 del df['column']
 
+# Add column to existing df from list
+# List p = [[4.2025161092359617, 4.1019777503090227, 4.418204566781358]
+preds = pd.Series(p)
+df['newCol'] = preds.values
+
 # Select from DataFrame using criteria from multiple columns
 # (use `|` instead of `&` to do an OR)
 newdf = df[(df['column_one']>2004) & (df['column_two']==9)]
@@ -81,6 +86,19 @@ df = df.where((pd.notnull(df)), None)
 # from strings and changing any empty values to None
 # (not especially recommended but including here b/c I had to do this in real life one time)
 df = df.applymap(lambda x: str(x).strip() if len(str(x).strip()) else None)
+
+# lets day you have a dataframe with 3 columns
+# you want to make a 4th column by running a function that takes as inputs values from 3 other columns
+df["NewCol"] = df.apply(lambda row: prediction(row["Neighbors"], row["User"], row["Item"], number_of_n=10), axis=1)
+# key here 'axis=1'
+
+
+# /Users/jaimealmeida/anaconda/lib/python3.6/site-packages/ipykernel/__main__.py:1: SettingWithCopyWarning:
+# A value is trying to be set on a copy of a slice from a DataFrame.
+# Try using .loc[row_indexer,col_indexer] = value instead
+
+
+
 
 # Get quick count of rows in a DataFrame
 len(df.index)
