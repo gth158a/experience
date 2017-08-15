@@ -13,7 +13,7 @@ cat part* > all_parts
 # join all files that start with part into one filename all_parts
 
 cat filename1 filename2 > bothfiles
-# concatenates files in order 
+# concatenates files in order
 
 ###############################
 # NEW
@@ -90,3 +90,14 @@ tail -n +1 -- ./6-20/rmse/rmse-p1q5*
 #
 # ==> ./6-20/rmse/rmse-p1q5-600-part-00000 <==
 # 3.5986058154045715
+
+###############################
+# to find all files in dirextory and subdirectory with an extension
+find . -type f -name '*.yml' > all_ymls.txt
+# same is possible with ag
+
+# Instead of using
+find . -name \*.c -exec grep foo {}
+# you can use
+ag --cc foo
+# Add --nohh if you don't want *.h files checked
