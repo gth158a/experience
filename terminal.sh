@@ -101,3 +101,9 @@ find . -name \*.c -exec grep foo {}
 # you can use
 ag --cc foo
 # Add --nohh if you don't want *.h files checked
+
+
+###############################
+
+gunzip '*.gz'
+# unzip multiple files using single quote (short version)
