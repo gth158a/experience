@@ -1,4 +1,8 @@
-# Terminal
+# Bash
+
+mkdir pytorch && cd "$_"
+# make directory "pytorch" and cd into it.
+# $_is a special parameter that holds the last argument of the previous command.
 
 cat filename | head -n 5
 # see first five lines
