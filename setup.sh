@@ -43,3 +43,31 @@ INSERT INTO test VALUES ('World', 222);
 SELECT * FROM test;
 # quit psql
 \q
+
+# setup postgres access
+sudo -i -u root
+echo "listen_addresses = '*'" >> /etc/postgresql/*/main/postgresql.conf
+echo 'host all all 0.0.0.0/0 md5' >> /etc/postgresql/*/main/pg_hba.conf
+sudo /etc/init.d/postgresql restart
+
+# install R and R studio
+sudo apt-get install r-base-core
+sudo apt-get install gdebi-core
+
+wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
+sudo gdebi rstudio-server-1.0.136-amd64.deb
+sudo restart rstudio-server
+
+# to access R rstudio
+# LINK: [IP]:8787
+
+# other python libraries
+sudo -H pip3 install numpy
+sudo apt-get install python3-pandas
+sudo -H pip3 install --upgrade beautifulsoup4
+# scrapy
+sudo -H pip3 install --upgrade html5lib
+sudo -H pip3 install scikit-learn
+
+# tools
+sudo -H pip3 install csvkit
