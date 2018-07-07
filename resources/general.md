@@ -17,3 +17,6 @@ https://bash-intro-2-data-coding-101/
 https://variables-if-statements-while-loops-bash-data-science/
 4. Working with dates (you will need only the "date" chapter from this article)
 https://command-line-data-awk-sed-join-date/
+
+On SED
+http://www.grymoire.com/Unix/Sed.html
