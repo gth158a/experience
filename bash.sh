@@ -1,3 +1,13 @@
+
+#!/usr/bin/env bash
+# bash shebang
+
+# to make filename executable
+chmod 700 <filename>.sh
+
+
+sleep 0.2 # useful in while loops
+
 date
 # Sat Jul  7 00:29:44 PDT 2018
 
@@ -69,7 +79,15 @@ done
 # 2
 # 3
 
-
+# IF statements in bash
+#!/usr/bin/env bash
+i=2
+if (( $i % 2 == 0 ))
+then
+echo 'even'
+else
+echo 'odd'
+fi
 
 
 # reorder columns in text files
